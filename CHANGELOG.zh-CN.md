@@ -1,5 +1,183 @@
 ## 更新日志
 
+### 2.8.0
+
+*2019-04-25*
+
+#### 新特性
+
+- Divider
+  - 新增 Divider 组件 (#15055 by @island205)
+- Rate
+  - 支持通过对象自定义 colors 与 icon-classes 属性 (#15051 by @SimonaliaChen)
+- Link
+  - 新增 Link 组件 (#15052 by @iamkun)
+- Calendar
+  - 新增 Calendar 组件 (#14908 by @ziyoung)
+- Icon
+  - 新增图标 (#15214 by @iamkun)
+- Alert
+  - 新增高饱和度主题 (#15041 by @island205)
+- Image
+  - 新增 Image 组件 (#15117 by @SimonaliaChen)
+- Collapse
+  - CollapseItem 支持禁用 (#15076 by @ziyoung)
+- Carousel
+  - 新增 direction 属性，支持垂直方向切换 (#15122 by @ziyoung)
+- Pagination
+  - 新增 hide-on-single-page 属性 (#15096 by @ziyoung)
+- Slider
+  - 新增 marks 属性 (#15133 by @luckyCao)
+- Input
+  - 新增 show-word-count 属性 (#15075 by @luckyCao)
+- InputNumber
+  - 新增 step-strictly 属性 (#15050 by @luckyCao)
+- Tooltip, Dropdown, Popover
+  - 新增 tabindex 属性 (#15167 by @ziyoung)
+
+#### Bug fixes
+
+- Notification
+  - 修复标题不换行的问题 (#15008 by @iamkun)
+- Form
+  - 修复动态表单校验规则不生效的问题 (#14985 by @luckyCao)
+  - 修复 label 的样式 (#14969 by @ziyoung)
+  - 当 required 为 true 时，显示星号 (#15144 by @ziyoung)
+- Pagination
+  - 修复 slot 未更新的问题 (#14711 by @lucyhao)
+- Table
+  - 修复懒加载时加载数据的 bug (#15101 by @ziyoung)
+  - 在合并单元格时，修复单元格的宽度计算不正确的问题 (#15196 by @ziyoung)
+  - 提升表格的性能 (#14868 by @ziyoung)
+  - 初始化时不再触发 sort-change 事件 (#14625 by @PeanutWatson)
+  - 让 height 与 max-height 属性的行为保持一致 (#14660 by @arthurdenner)
+- Dialog
+  - 修复内容不换行的问题 (#15027 by @iamkun)
+- Alert
+  - 更新 typescript 定义文件 (#15186 by @ziyoung)
+- Tabs
+  - Fix issue where Promise rejection was hitting application (#14816 by @ffxsam)
+  - slot 改变时，重新渲染 (#15238 by @ziyoung)
+- Message
+  - 修复 typescript 定义文件 (#14968 by @agoni1212)
+- Select
+  - 修复当 value 为 undefined 或者 null 的报错 (#15022 by @luckyCao)
+- Tree
+  - 当前节点被删除后，选中的节点也应该删除 (#14604 by @sinchang)
+  - 提升性能 (#14881 by @ChenZhuoSteve)
+- Dropdown
+  - 修复样式 (#14907 by @doing123)
+- Slider
+  - 修复可访问性问题 (#14792 by @erezsob)
+- Menu
+  - 如果 defaultIndex 不存在，activeIndex 应该为空 (#14074 by @hoythan)
+- Directive
+  - RepeatClick: 使用 Date.now 提升性能 (#14776 by @pavelmash)
+- Upload
+  - 修复 Upload 的背景颜色 (#15039 by @iamkun)
+- Theme
+  - 添加无圆角变量 (#15256 by @iamkun)
+
+#### Optimization
+
+- Chore
+  - 更新中文 changelog (#14965 by @iamkun)
+  - 当 demo 描述为空时，不再显示 (#15014 by @ziyoung)
+  - 显示 DevServer 的信息 (#15028 by @iamkun)
+  - 修复 2.6 changelog 的 bug (#15026 by @iamkun)
+  - 更新构建脚本 (#14821 by @abc3660170)
+  - 本次开发时支持热更新 (#15221 by @SimonaliaChen)
+  - 本地开发时，加载 sourcemap (#15087 by @ibufu)
+Docs
+  - 重命名 demo 中的变量 (#14602 #15003 #15094 #15105 by @liupl)
+  - 修复 upload 文档中的错误 (#15023 by @iamkun)
+  - 更新 Form 文档 (#15040 by @iamkun)
+  - 更新 Tabs 文档 (#15053 by @iamkun)
+  - 使用 eleme.cn 作为新域名 (#15139 by @ziyoung)
+  - 修复 Image 组件的路由名 (#15194 by @iamkun)
+  - 删除多余的法语翻译 (#15207 by @iamkun)
+
+#### Breaking changes
+
+- Rate
+  - 禁用情况下，显示小位数 (#15089 by @haoranyu)
+- Select
+  - 过滤情况下，placeholder 为选中选项的 label (#14989 by @ibufu)
+
+### 2.7.2
+
+*2019-04-03*
+
+#### 修复
+
+- Form
+  - 修复 `label-width` 为 `auto` 的样式 (#14955 by @ziyoung)
+  
+#### 优化
+- Docs
+  - 修复文档内图片链接错误 (#14957 by @iamkun)
+- Chore
+  - 修复发布时 mkdir 异常 (#14952 by @iamkun)
+
+### 2.7.1
+
+*2019-04-03*
+
+#### 修复
+
+- Select
+  - 清空时设置 value 为 null (#14322 by @aaronfulkerson)
+- Input
+  - 当类型改变时更新 DOM (#14889 by @wacky6)
+- Table
+  - 修复当有展开列时 `defaultExpandAll` 的行为 (#14935 by @ziyoung)
+- Dialog
+  - 可以设置背景色 (#14939 by @ziyoung)
+- Form
+  - `label-width` 支持自动宽度 (#14944 by @ziyoung)
+  
+#### 优化
+- Docs
+  - 更新西班牙语文档 (#14913 by @Gonzalo2310)
+  - 新增组件自动生成法语文档 (#14924 by @ziyoung)
+  - 更新 Tabs 文档 (#14938 by @ziyoung)
+
+### 2.7.0
+
+*2019-03-28*
+
+#### 新特性
+
+- Table
+  - 增加对树形结构数据的支持 (#14632 by @ziyoung)
+
+#### 修复
+
+- Tabs
+  - 阴影样式使用全局主颜色 (#14558 by @Richard-Choooou)
+  - 当 label 改变时触发更新 (#14496 by @akki-jat)
+- Table
+  - Table footer 与 body 的对齐一致 (#14730 by @ziyoung)
+- NavMenu
+  - 修复点击 el-submenu 多次触发 childMenu 问题 (#14443 by @PanJiaChen)
+- Dropdown
+  - 兼容 Vue 2.6 新 v-slot 语法 (#14832 by @ziyoung)
+- ColorPicker
+  - 修复十六进制颜色字符串解析问题 (#14793 by @iamkun)
+- Tree
+  - 恢复 pr #13349 (#14847 by @ziyoung)
+- Tooltip
+  - 当初始值为 true 时默认显示 (#14826 by @ziyoung)
+- Docs
+  - 更新 Cascader 文档 (#14442 by @panhezeng)
+- Style
+  - 修复媒体查询 sm-only, md-only, lg-only 问题 (#14611 by @sinchang)
+
+#### 优化
+
+- Chore
+  - 增加网页描述信息 (#14802 by @iamkun)
+
 ### 2.6.3
 
 *2019-03-21*
@@ -131,6 +309,10 @@
   - 修复 DatetimePicker 文档问题 (by @iamkun in #14290)
   - 修复 DatePicker 文档拼写问题 (by @helmut in #14481)
   - 修复分页组件文档样式问题 (by @liuchuzhang in #14451)
+
+#### 非兼容性更新
+- Table
+  - 修复 row 事件的参数顺序 (by @jikkai in #12086)
 
 ### 2.5.4
 

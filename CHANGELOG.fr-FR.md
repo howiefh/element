@@ -1,6 +1,182 @@
 ## Changelog
 
-### 2.6.2
+### 2.8.0
+
+*2019-04-25*
+
+#### New features
+
+- Divider
+  - Add divider component (#15055 by @island205)
+- Rate
+  - Add custom colors and icon-classes by passing a object (#15051 by @SimonaliaChen)
+- Link
+  - Add link component (#15052 by @iamkun)
+- Calendar
+  - Add calendar component (#14908 by @ziyoung)
+- Icon
+  - Add icon (#15214 by @iamkun)
+- Alert
+  - Add dark theme (#15041 by @island205)
+- Image
+  - Add image component (#15117 by @SimonaliaChen)
+- Collapse
+  - CollapseItem can be disabled (#15076 by @ziyoung)
+- Carousel
+  - Add direction attribute and support vertical direction (#15122 by @ziyoung)
+- Pagination
+  - Add hide-on-single-page attribute (#15096 by @ziyoung)
+- Slider
+  - Add marks attribute (#15133 by @luckyCao)
+- Input
+  - Add show-word-count attribute (#15075 by @luckyCao)
+- InputNumber
+  - Add step-strictly attribute (#15050 by @luckyCao)
+- Tooltip, Dropdown, Popover
+  - Support tabindex attribute (#15167 by @ziyoung)
+
+#### Bug fixes
+
+- Notification
+  - Fix title word break (#15008 by @iamkun)
+- Form
+  - Fix switching the rules in el-form not work (#14985 by @luckyCao)
+  - Fix label style (#14969 by @ziyoung)
+  - Required FormItem displays asterisk when label is auto (#15144 by @ziyoung)
+- Pagination
+  -  Fix slot not updated (#14711 by @lucyhao)
+- Table
+  - Fix load bug in lazy mode (#15101 by @ziyoung)
+  - Fix cell width when colspan is grater than 1 (#15196 by @ziyoung)
+  - Improve performance (#14868 by @ziyoung)
+  - Don't emit triggers sort-change during initialization (#14625 by @PeanutWatson)
+  - Equal behaviour for height and max-height (#14660 by @arthurdenner)
+- Dialog
+  - Fix dialog body correctly break long words (#15027 by @iamkun)
+- Alert
+  - update type definition (#15186 by @ziyoung)
+- Tabs
+  - Fix issue where Promise rejection was hitting application (#14816 by @ffxsam)
+  - Rerender when slot changes (#15238 by @ziyoung)
+- Message
+  - Fix type definition (#14968 by @agoni1212)
+- Select
+  - Fix error when value is undefined or null (#15022 by @luckyCao)
+- Tree
+  - Delete current node after it removed (#14604 by @sinchang)
+  - Improve performance (#14881 by @ChenZhuoSteve)
+- Dropdown
+  - Fix style (#14907 by @doing123)
+- Slider
+  - Fix broken keyboard a11y bug (#14792 by @erezsob)
+- Menu
+  - ActiveIndex value shall be null if defaultIndex does not exist(#14074 by @hoythan)
+- Directive
+  - RepeatClick: use Date.now() instead of new Date() (#14776 by @pavelmash)
+- Upload
+  - Fix Upload transparent picture display style (#15039 by @iamkun)
+- Theme
+  - Add zero border (#15256 by @iamkun)
+
+#### Optimization
+
+- Chore
+  - Update changelog zh-cn (#14965 by @iamkun)
+  - Hide demo description when it's empty (#15014 by @ziyoung)
+  - Display dev server info by default by @iamkun)
+  - Fix 2.6.0 changelog error (#15026 by @iamkun)
+  - Update build config (#14821 by @abc3660170)
+  - Add hmr (#15221 by @SimonaliaChen)
+  - Use sourcemap in dev environment (#15087 by @ibufu)
+Docs
+  - Rename variable in docs (#14602 #15003 #15094 #15105 by @liupl)
+  - Fix upload doc error (#15023 by @iamkun)
+  - Update Form custom validator doc (#15040 by @iamkun)
+  - Update Tabs docs to display vertical tabs (#15053 by @iamkun)
+  - Use eleme.cn as domain (#15139 by @ziyoung)
+  - Fix Image route name (#15194 by @iamkun)
+  - Remove duplicated fr translation (#15207 by @iamkun)
+
+#### Breaking changes
+
+- Rate
+  - Fix decimal display support in disabled mode (#15089 by @haoranyu)
+- Select
+  - Use placeholder option label to set placeholder in filter mode (#14989 by @ibufu)
+
+### 2.7.2
+
+*2019-04-03*
+
+#### Bug fixes
+
+- Form
+  - Fix auto `label-width` style (#14955 by @ziyoung)
+  
+#### Optimization
+- Docs
+  - Fix doc img link error (#14957 by @iamkun)
+- Chore
+  - Fix deploy mkdir error (#14952 by @iamkun)
+
+### 2.7.1
+
+*2019-04-03*
+
+#### Bug fixes
+
+- Select
+  - Set value to null when cleared (#14322 by @aaronfulkerson)
+- Input
+  - Update DOM dependent values on type change (#14889 by @wacky6)
+- Table
+  - Make `defaultExpandAll` works when expanded column exists (#14935 by @ziyoung)
+- Dialog
+  - Background color can be configured (#14939 by @ziyoung)
+- Form
+  - `label-width` supports auto width (#14944 by @ziyoung)
+  
+#### Optimization
+- Docs
+  - Update Spanish docs (#14913 by @Gonzalo2310)
+  - Add French doc for new component (#14924 by @ziyoung)
+  - Optimize Tabs docs (#14938 by @ziyoung)
+
+### 2.7.0
+
+*2019-03-28*
+
+#### New features
+
+- Table
+  - Add support tree structure data (#14632 by @ziyoung)
+
+#### Bug fixes
+
+- Tabs
+  - Use primary color as boxShadow color (#14558 by @Richard-Choooou)
+  - Rerender when label changes (#14496 by @akki-jat)
+- Table
+  - Footer follows body cell align (#14730 by @ziyoung)
+- NavMenu
+  - Fix click el-submenu trigger childMenu pop again bug (#14443 by @PanJiaChen)
+- Dropdown
+  - Make compatible with 2.6 new v-slot syntax (#14832 by @ziyoung)
+- ColorPicker
+  - Fix handle error hex color string (#14793 by @iamkun)
+- Tree
+  - Revert pr #13349 (#14847 by @ziyoung)
+- Tooltip
+  - Display when initial value is true (#14826 by @ziyoung)
+- Docs
+  - Update cascader docs (#14442 by @panhezeng)
+- Style
+  - Fix media query in sm-only, md-only, lg-only (#14611 by @sinchang)
+
+#### Optimization
+
+- Chore
+  - Add webpage description (#14802 by @iamkun)
 
 ### 2.6.3
 
@@ -11,6 +187,8 @@
 - Fix Cascader demo style (#14789 by @ziyoung)
 - Remove unnecessary DOM operation (#14788 by @ziyoung)
 - Fix DatePicker default-value DST (#14562 by @wacky6)
+
+### 2.6.2
 
 *2019-03-21*
 
@@ -133,6 +311,10 @@
   - Problème d'orthographe dans la documentation du DatePicker (par @helmut dans #14481)
   - Correction du style de la doc de Pagination(par @liuchuzhang dans #14451)
 
+#### Breaking changes
+- Table
+  - Fix params order of row events (by @jikkai in #12086)
+  
 ### 2.5.4
 
 *2019-02-01*

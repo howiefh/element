@@ -299,36 +299,6 @@ describe('Tree', () => {
     expect(vm.$el.querySelectorAll('.el-checkbox .is-checked').length).to.equal(1);
   });
 
-  it('defaultCheckedKeys & lazy, checked children length as expected', () => {
-    vm = getTreeVm(':load="loadNode" :props="defaultProps" :default-checked-keys="defaultCheckedKeys" node-key="id" :default-expanded-keys="[1]" lazy show-checkbox ', {
-      created() {
-        this.defaultCheckedKeys = [2, 3];
-      },
-      methods: {
-        loadNode(node, resolve) {
-          if (node.level === 0) {
-            return resolve([{ label: 'head', id: 1} ]);
-          }
-          return resolve([
-            {
-              label: '#1',
-              id: 2
-            },
-            {
-              label: '#3',
-              id: 3
-            },
-            {
-              label: '$4',
-              id: 5
-            }
-          ]);
-        }
-      }
-    });
-    expect(vm.$el.querySelectorAll('.el-checkbox.is-checked').length).to.equal(2);
-  });
-
   it('show checkbox', done => {
     vm = getTreeVm(':props="defaultProps" show-checkbox');
     const tree = vm.$children[0];
@@ -524,10 +494,13 @@ describe('Tree', () => {
   it('remove', (done) => {
     vm = getTreeVm(':props="defaultProps" node-key="id"');
     const tree = vm.$children[0];
+    tree.setCurrentKey(1);
+    expect(tree.getCurrentNode().id).to.equal(1);
     tree.remove(1);
     vm.$nextTick(() => {
       expect(vm.data[0].id).to.equal(2);
       expect(tree.getNode(1)).to.equal(null);
+      expect(tree.getCurrentNode()).to.equal(null);
       done();
     });
   });

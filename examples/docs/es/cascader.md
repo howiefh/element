@@ -680,7 +680,7 @@ Puede mostrar sólo el último nivel en lugar de todos los niveles.
 ```html
 <el-cascader
   :options="options"
-  v-model="selectedOptions3"
+  v-model="selectedOptions"
 ></el-cascader>
 <script>
   export default {
@@ -881,7 +881,7 @@ Puede mostrar sólo el último nivel en lugar de todos los niveles.
             label: 'Design Documentation'
           }]
         }],
-        selectedOptions3: ['component', 'data', 'tag']
+        selectedOptions: ['component', 'data', 'tag']
       };
     }
   };
@@ -1114,7 +1114,7 @@ Se puede hacer una carga dinamica de elementos hijos cuando se hace clic en el e
 
 ```html
 <el-cascader
-  :options="options2"
+  :options="options"
   @active-item-change="handleItemChange"
   :props="props"
 ></el-cascader>
@@ -1123,7 +1123,7 @@ Se puede hacer una carga dinamica de elementos hijos cuando se hace clic en el e
   export default {
     data() {
       return {
-        options2: [{
+        options: [{
           label: 'California',
           cities: []
         }, {
@@ -1392,10 +1392,9 @@ Buscar y seleccionar opciones con una palabra clave.
 ### Atributos
 | Atributo         | Descripción                              | Tipo            | Opciones              | Por defecto |
 | ---------------- | ---------------------------------------- | --------------- | --------------------- | ----------- |
-| value / v-model   | valor enlazado                           | boolean / string / number | —                     | —           |
+| value / v-model   | valor seleccionado                           | array | —                     | —           |
 | options          | datos de las opciones                    | array           | —                     | —           |
 | props            | opciones de configuracion,  mire la tabla siguiente | object          | —                     | —           |
-| value            | valor seleccionado                       | array           | —                     | —           |
 | popper-class     | nombre de clase para el Cascader's dropdown | string          | —                     | —           |
 | placeholder      | input placeholder                        | string          | —                     | Select      |
 | disabled         | si Cascader esta disabled                | boolean         | —                     | false       |

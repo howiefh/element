@@ -677,7 +677,7 @@ The input can display only the last level instead of all levels.
 ```html
 <el-cascader
   :options="options"
-  v-model="selectedOptions3"
+  v-model="selectedOptions"
 ></el-cascader>
 <script>
   export default {
@@ -878,7 +878,7 @@ The input can display only the last level instead of all levels.
             label: 'Design Documentation'
           }]
         }],
-        selectedOptions3: ['component', 'data', 'tag']
+        selectedOptions: ['component', 'data', 'tag']
       };
     }
   };
@@ -1109,7 +1109,7 @@ Load child options when their parent option is clicked or hovered over.
 :::demo In this example, the options array does not have data of cities when initialized. With the `active-item-change` event, you can load the cities of a specific state dynamically. Besides, this example also demonstrates how `props` is used.
 ```html
 <el-cascader
-  :options="options2"
+  :options="options"
   @active-item-change="handleItemChange"
   :props="props"
 ></el-cascader>
@@ -1118,7 +1118,7 @@ Load child options when their parent option is clicked or hovered over.
   export default {
     data() {
       return {
-        options2: [{
+        options: [{
           label: 'California',
           cities: []
         }, {
@@ -1386,10 +1386,9 @@ Search and select options with a keyword.
 ### Attributes
 | Attribute | Description         | Type    | Options       | Default|
 |---------- |-------------------- |---------|-------------  |-------- |
-| value / v-model | binding value  | boolean / string / number | — | — |
+| value / v-model | binding value  | array | — | — |
 | options   | data of the options | array | — | — |
 | props | configuration options, see the following table | object | — | — |
-| value | selected value | array | — | — |
 | separator | option separator | string | — | / |
 | popper-class | custom class name for Cascader's dropdown | string | — | — |
 | placeholder | input placeholder | string | — | Select |

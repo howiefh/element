@@ -1,5 +1,35 @@
 ## 更新日志
 
+### 2.8.2
+
+*2019-04-25*
+
+#### Bug 修复
+
+- Icon
+  - 更新 icon (#15272 by @iamkun)
+- 文档
+  - 修复 Form 与 Input 文档样式 (#15273 by @ziyoung)
+
+### 2.8.1
+
+*2019-04-25*
+
+#### Bug 修复
+
+- Icon
+  - 更新 Select 与 Cascader 的 icon (#15264 by @SimonaliaChen)
+  - 更新 icon (#15258 by @iamkun)
+
+#### 优化
+
+- Chore
+  - 更新构建脚本 (#15267 by @ziyoung)
+- Docs
+  - 修复 link 的样式 (#15265 by @iamkun)
+- 其他
+  - migrating 配置兼容驼峰名称 (#15260 by @SimonaliaChen)
+
 ### 2.8.0
 
 *2019-04-25*
@@ -35,7 +65,7 @@
 - Tooltip, Dropdown, Popover
   - 新增 tabindex 属性 (#15167 by @ziyoung)
 
-#### Bug fixes
+#### Bug 修复
 
 - Notification
   - 修复标题不换行的问题 (#15008 by @iamkun)
@@ -78,7 +108,7 @@
 - Theme
   - 添加无圆角变量 (#15256 by @iamkun)
 
-#### Optimization
+#### 优化
 
 - Chore
   - 更新中文 changelog (#14965 by @iamkun)
@@ -97,7 +127,7 @@ Docs
   - 修复 Image 组件的路由名 (#15194 by @iamkun)
   - 删除多余的法语翻译 (#15207 by @iamkun)
 
-#### Breaking changes
+#### 非兼容性更新
 
 - Rate
   - 禁用情况下，显示小位数 (#15089 by @haoranyu)

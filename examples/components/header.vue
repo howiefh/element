@@ -303,7 +303,7 @@
           </li>
           <li 
             class="nav-item"
-            v-if="showThemeConfigurator"
+            v-if="$isEle"
           >
             <router-link
               active-class="active"
@@ -373,7 +373,7 @@
           
           <!--theme picker-->
           <li class="nav-item nav-theme-switch" v-show="isComponentPage">
-            <theme-picker v-if="!showThemeConfigurator"></theme-picker>
+            <theme-picker v-if="!$isEle"></theme-picker>
           </li>
         </ul>
       </div>
@@ -386,7 +386,7 @@
   import compoLang from '../i18n/component.json';
   import Element from 'main/index.js';
   import themeLoader from './theme/loader';
-  import { getVars } from './theme/loader/api.js';
+  import { getTestEle } from './theme/loader/api.js';
   import bus from '../bus';
   import { ACTION_USER_CONFIG_UPDATE } from './theme/constant.js';
 
@@ -405,8 +405,7 @@
           'en-US': 'English',
           'es': 'Español',
           'fr-FR': 'Français'
-        },
-        showThemeConfigurator: false
+        }
       };
     },
 
@@ -432,18 +431,14 @@
       }
     },
     mounted() {
-      const host = location.hostname;
-      this.showThemeConfigurator = host.match('localhost') || host.match('elenet');
-      if (!this.showThemeConfigurator) {
-        getVars()
-          .then(() => {
-            this.showThemeConfigurator = true;
-            ga('send', 'event', 'DocView', 'Inner');
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
+      getTestEle()
+        .then(() => {
+          this.$isEle = true;
+          ga('send', 'event', 'DocView', 'Inner');
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
     methods: {
       switchVersion(version) {

@@ -115,7 +115,7 @@ export default {
     getColumnElIndex(children, child) {
       let columnIndex;
       while (children.length) {
-        columnIndex = [].indexOf.call(children, this.$el);
+        columnIndex = [].indexOf.call(children, child);
         if (columnIndex >= 0) {
           break;
         }
